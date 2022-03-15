@@ -58,9 +58,9 @@ namespace InfiniteRuntimeTagViewer.Interface.Controls
 			int debugMeme = 0;
 		}
 
-		public void Inhale_tag(string tagID) // i love dictionaries
+		public void Inhale_tag(string tagIndex) // i love dictionaries
 		{
-			TagStruct loadingTag = _mainWindow.TagsList[tagID];
+			TagStruct loadingTag = _mainWindow.TagsList[tagIndex];
 			Tagname_text.Text = _mainWindow.convert_ID_to_tag_name(loadingTag.ObjectId);
 			tagID_text.Text = "ID: " + loadingTag.ObjectId;
 			tagdatnum_text.Text = "Datnum: " + loadingTag.Datnum;
@@ -104,7 +104,7 @@ namespace InfiniteRuntimeTagViewer.Interface.Controls
 				//if (TagLayouts.Tags.ContainsKey(loadingTag.TagGroup))
 				//{
 					Dictionary<long, TagLayouts.C> tags = TagLayouts.Tags(loadingTag.TagGroup);
-					readTagsAndCreateControls(loadingTag, 0, tags, loadingTag.TagData, tagview_panels, tagID+":");
+					readTagsAndCreateControls(loadingTag, 0, tags, loadingTag.TagData, tagview_panels, tagIndex +":");
 				//}
 				//else
 				//{

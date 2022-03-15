@@ -641,9 +641,9 @@ namespace InfiniteRuntimeTagViewer
 			return new string(myArr);
 		}
 
-		public void CreateTagEditorTabByTagIndex(string tagID)
+		public void CreateTagEditorTabByTagIndex(string tagIndex)
 		{
-			TagStruct? tag = TagsList[tagID];
+			TagStruct? tag = TagsList[tagIndex];
 			string? tagFull = "(" + tag.Datnum + ") " + convert_ID_to_tag_name(tag.ObjectId);
 			string tagName = tagFull.Split('\\').Last();
 
@@ -688,7 +688,7 @@ namespace InfiniteRuntimeTagViewer
 
 			// Create the tag editor.
 			TagEditorControl? tagEditor = new TagEditorControl(this);
-			tagEditor.Inhale_tag(tagID);
+			tagEditor.Inhale_tag(tagIndex);
 
 			// Create the layout document for docking.
 			LayoutDocument doc = tagEditor.LayoutDocument = new LayoutDocument();
@@ -1514,6 +1514,12 @@ namespace InfiniteRuntimeTagViewer
          * TagRef
          * Pointer
          * Tagblock
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
          * String
          * TagrefGroup
          * TagrefTag
